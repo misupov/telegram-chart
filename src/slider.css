@@ -1,0 +1,98 @@
+body {
+  --scroll-background: rgba(226,238,249,0.6);
+  --scroll-selector: #c0d1e1;
+  --scroll-shadow: white;
+  --scroll-border: 1.5px;
+  --thumb-width: 6px;
+  --radius: 6px;
+}
+
+.slider {
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+  --left: 20%;
+  --right: 100%;
+}
+.preview-left {
+  position: relative;
+  left: 0;
+  height: 100%;
+  width: var(--left);
+  background-color: var(--scroll-background);
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+}
+.preview-right {
+  position: relative;
+  top: calc(-1*100%);
+  left: var(--right);
+  height: 100%;
+  width: calc(100% - var(--right));
+  background: var(--scroll-background);
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+.scroller {
+  position: relative;
+  left: var(--left);
+  top: calc(-2*100%);
+  height: 100%;
+  width: calc(var(--right) - var(--left));
+}
+.scroller .thumb {
+  position: absolute;
+  width: var(--thumb-width);
+  top: calc(-1*var(--scroll-border));
+  bottom: calc(-1*var(--scroll-border));
+  border: 1px solid var(--scroll-selector);
+  background: var(--scroll-selector);
+  box-shadow: 0 0 0 var(--scroll-border) var(--scroll-shadow);
+}
+.scroller .thumb.left {
+  left: calc(-1*var(--thumb-width));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.scroller .thumb.left:after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: 25px;
+  height: 100%;
+}
+.scroller .thumb.right {
+  right: calc(-1*var(--thumb-width));
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.scroller .thumb.right:after {
+  content: '';
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: -4px;
+  width: 25px;
+  height: 100%;
+}
+.scroller .thumb:before {
+  position: absolute;
+  content: '';
+  top: 30%;
+  bottom: 30%;
+  left: 33%;
+  right: 33%;
+  background: white;
+  border-radius: 3px;
+}
+.scroller .center {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(-1*var(--scroll-border));
+  bottom: calc(-1*var(--scroll-border));
+  border-top: var(--scroll-border) solid var(--scroll-selector);
+  border-bottom: var(--scroll-border) solid var(--scroll-selector);
+}

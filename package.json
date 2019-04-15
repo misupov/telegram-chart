@@ -1,0 +1,21 @@
+{
+  "name": "tg-charts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "rm -rf ./dist && mkdir ./dist && mkdir ./dist/data && cp -R ./data ./dist && parcel index.html --open",
+    "build": "rm -rf ./dist && mkdir ./dist && mkdir ./dist/data && cp -R ./data ./dist && parcel build index.html --no-minify"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "parcel-bundler": "^1.6.1",
+    "resize-observer-polyfill": "^1.5.1",
+    "rimraf": "^2.6.3",
+    "typescript": "^3.4.1"
+  },
+  "keywords": [
+    "dbaces",
+    "ladder"
+  ]
+}
